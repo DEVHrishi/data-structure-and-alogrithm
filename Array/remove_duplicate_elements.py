@@ -1,6 +1,6 @@
 import array as arr
 def test(nums):
-    return sorted(set(nums))
+    return (sorted(set(nums)))
 
 array_num = arr.array('i', [1, 3, 5, 1, 3, 7, 9])
 print("Original array:")
