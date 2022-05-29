@@ -1,21 +1,22 @@
-import array as arr
+
 def test(nums):
     return (sorted(set(nums)))
 
-array_num = arr.array('i', [1, 3, 5, 1, 3, 7, 9])
-print("Original array:")
-for i in range(len(array_num)):    
-    print(array_num[i], end=' ')
-print("\nAfter removing duplicate elements from the said array:")
-result = arr.array('i', test(array_num))
-for i in range(len(result)):    
-    print(result[i], end=' ')
+array_num = [1,1,2]
+print(test(array_num))
+n = len(test(array_num))
+print(n)
 
-array_num = arr.array('i', [2, 4, 2, 6, 4, 8])
-print("\nOriginal array:")
-for i in range(len(array_num)):    
-    print(array_num[i], end=' ')
-print("\nAfter removing duplicate elements from the said array:")
-result = arr.array('i', test(array_num))
-for i in range(len(result)):    
-    print(result[i], end=' ')
+
+# efficient approach tc=o(n) sc=o(1)
+def removeDuplicates(nums):
+    x = 1
+    for i in range(len(nums)-1):
+        if(nums[i] != nums[i+1]):
+            nums[x] = nums[i+1]
+            x += 1
+    return(x)
+
+array_num = [1,1,2]
+
+print("\nAfter removing duplicate elements from the said array no of elements:", removeDuplicates(array_num))

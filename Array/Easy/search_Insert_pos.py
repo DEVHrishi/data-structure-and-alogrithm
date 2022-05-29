@@ -1,23 +1,27 @@
-# Function to find insert position of K
-def find_index(arr, n, K):
-
-    # Traverse the array
-    for i in range(n):
-
-        # If K is found
-        if arr[i] == K:
+# Linear search tc=O(n) sc=O(1)
+def find_index(arr, K):
+    for i in range(len(arr)):
+        if arr[i] >= K:
             return i
+    return len(arr)
 
-        # If arr[i] exceeds K
-        elif arr[i] > K:
-            return i
-
-    # If all array elements are smaller
-    return n
-
-
-# Driver Code
 arr = [1, 3, 5, 6]
-n = len(arr)
 K = 2
-print(find_index(arr, n, K))
+print(find_index(arr, K))
+
+# bisect search tc=O(log(n)) sc=O(1)
+import bisect
+
+def searchInsert(nums, target):
+    return bisect.bisect_left(nums, target)
+
+# binary search tc=O(log(n)) sc=O(1)
+def searchInsert(nums, target):
+        low, high = 0, len(nums)
+        while low < high:
+            mid = (low + high) // 2
+            if target > nums[mid]:
+                low = mid + 1
+            else:
+                high = mid
+        return low
