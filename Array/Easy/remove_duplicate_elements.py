@@ -1,4 +1,4 @@
-
+# brute force method tc=O(n log n) sc=O(1)
 def test(nums):
     return (sorted(set(nums)))
 

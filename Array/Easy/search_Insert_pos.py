@@ -11,7 +11,6 @@ print(find_index(arr, K))
 
 # bisect search tc=O(log(n)) sc=O(1)
 import bisect
-
 def searchInsert(nums, target):
     return bisect.bisect_left(nums, target)
 
