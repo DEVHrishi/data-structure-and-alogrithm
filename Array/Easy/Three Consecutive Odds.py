@@ -1,3 +1,5 @@
+'''Given an integer array arr, return true if there are three consecutive odd numbers in the array. Otherwise, return false.'''
+
 def threeConsecutiveOdds(arr):
         c = 0
         for i in arr:
