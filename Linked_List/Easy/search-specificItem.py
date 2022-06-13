@@ -31,4 +31,4 @@ if __name__ == '__main__':
     llist.append_item(2)
     llist.append_item(3)
     llist.append_item(4)
-    print(llist.search_item(7))
+    print(llist.search_item(3))
