@@ -20,7 +20,26 @@ class doubly_LinkedList (object):
             new_node.prev = self.tail
             self.tail = new_node
         self.count += 1
+
+    def delete_item(self, data):
+        temp = self.head
+        while temp:
+            if temp.data == data:
+                if temp.prev is None:
+                    self.head = temp.next
+                    temp.next.prev = None
+                elif temp.next is None:
+                    self.tail = temp.prev
+                    temp.prev.next = None
+                else:
+                    temp.prev.next = temp.next
+                    temp.next.prev = temp.prev
+                self.count -= 1
+                return True
+            temp = temp.next
+        return False
         
+
     def print_list(self):
         temp = self.head
         while temp:
@@ -34,5 +53,5 @@ if __name__ == '__main__':
     llist.append_item(2)
     llist.append_item(3)
     llist.append_item(4)
-    llist.search_item(6)
+    llist.delete_item(3)
     llist.print_list()

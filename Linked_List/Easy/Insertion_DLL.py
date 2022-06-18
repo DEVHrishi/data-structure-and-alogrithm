@@ -20,7 +20,30 @@ class doubly_LinkedList (object):
             new_node.prev = self.tail
             self.tail = new_node
         self.count += 1
-        
+
+    def prepend_item(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+        self.count += 1
+
+    def insert_after(self, data, prev_node):
+        new_node = Node(data)
+        if prev_node is None:
+            print("Previous node is not in the list")
+            return
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+        new_node.prev = prev_node
+        if new_node.next is not None:
+            new_node.next.prev = new_node
+        self.count += 1
+
     def print_list(self):
         temp = self.head
         while temp:
@@ -34,5 +57,5 @@ if __name__ == '__main__':
     llist.append_item(2)
     llist.append_item(3)
     llist.append_item(4)
-    llist.search_item(6)
+    llist.insert_after(3, 3)
     llist.print_list()

@@ -20,7 +20,23 @@ class doubly_LinkedList (object):
             new_node.prev = self.tail
             self.tail = new_node
         self.count += 1
-        
+
+    def search_item(self, data):
+        temp = self.head
+        while temp:
+            if temp.data == data:
+                return print("True")
+            temp = temp.next
+        return print("False")
+
+
+    def reverse_list(self):
+        temp = self.head
+        while temp:
+            temp.prev, temp.next = temp.next, temp.prev
+            temp = temp.prev
+        self.head, self.tail = self.tail, self.head
+
     def print_list(self):
         temp = self.head
         while temp:
