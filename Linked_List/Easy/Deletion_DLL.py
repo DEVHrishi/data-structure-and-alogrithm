@@ -1,3 +1,4 @@
+# TC = O(1) and SC = O(1)
 class Node (object):
     def __init__(self, data = None, prev = None, next = None):
         self.data = data
@@ -20,6 +21,24 @@ class doubly_LinkedList (object):
             new_node.prev = self.tail
             self.tail = new_node
         self.count += 1
+
+    def delete_beginning(self):
+        if self.head is None:
+            return False
+        else:
+            self.head = self.head.next
+            self.head.prev = None
+            self.count -= 1
+            return True
+
+    def delete_end(self):
+        if self.head is None:
+            return False
+        else:
+            self.tail = self.tail.prev
+            self.tail.next = None
+            self.count -= 1
+            return True
 
     def delete_item(self, data):
         temp = self.head

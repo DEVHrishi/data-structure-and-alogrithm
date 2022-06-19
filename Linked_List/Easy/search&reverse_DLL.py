@@ -1,3 +1,4 @@
+# TC = O(n) and SC = O(n)
 class Node (object):
     def __init__(self, data = None, prev = None, next = None):
         self.data = data
@@ -50,5 +51,5 @@ if __name__ == '__main__':
     llist.append_item(2)
     llist.append_item(3)
     llist.append_item(4)
-    llist.search_item(6)
+    llist.reverse_list()
     llist.print_list()
