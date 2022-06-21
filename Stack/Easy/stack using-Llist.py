@@ -12,6 +12,7 @@ class Stack:
     def __init__(self):
         self.head = Node("head")
         self.size = 0
+        
 
 # String representation of the stack in Linked List form by appending "->"
     def __str__(self):
