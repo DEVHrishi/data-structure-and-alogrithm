@@ -5,8 +5,6 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-
-
 class Stack:
     # Initializing a stack.
     def __init__(self):
@@ -42,7 +40,6 @@ class Stack:
         self.head.next = self.head.next.next
         self.size -= 1
         return remove.value
-
 
 # main Code
 if __name__ == "__main__":
