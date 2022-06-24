@@ -42,9 +42,9 @@ class Stack:
         return remove.value
 
 # main Code
-if __name__ == "__main__":
+if __name__  ==  "__main__":
     stack = Stack()
-    for i in range(1, 16):
+    for i in range(1, 17):
         stack.push(i)
     print(f"Stack: {stack}")
     for _ in range(1, 11):
