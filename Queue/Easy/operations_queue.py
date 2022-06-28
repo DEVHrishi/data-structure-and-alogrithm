@@ -10,13 +10,16 @@ print(q.qsize())
 q.put('a')
 q.put('b')
 q.put('c')
+q.put('d')
 
 # Return Boolean for Full
 # Queue
 print("\nFull: ", q.full())
 
 # Removing element from queue
+
 print("\nElements dequeued from the queue")
+print(q.get())
 print(q.get())
 print(q.get())
 print(q.get())
