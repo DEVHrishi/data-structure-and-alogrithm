@@ -1,2 +1,2 @@
 # DSA--python--problems
-DSA problem solution using python
+DSA problems solution using python
