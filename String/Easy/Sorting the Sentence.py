@@ -12,13 +12,15 @@ Output: "This is a sentence"
 Explanation: Sort the words in s to their original positions "This1 is2 a3 sentence4", then remove the numbers.'''
 
 # TC = O(N)
+
+
 def sortSentence(self, s: str) -> str:
-	    words = s.split()
-	    n = len(words)
+    words = s.split()
+    n = len(words)
 
-	    sent = [None] * n
+    sent = [None] * n
 
-	    for i in range(n):
-		    sent[int(words[i][-1]) - 1] = words[i][:-1]
+    for i in range(n):
+        sent[int(words[i][-1]) - 1] = words[i][:-1]
 
-	    return " ".join(sent)
+    return " ".join(sent)
