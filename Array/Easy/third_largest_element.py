@@ -27,6 +27,7 @@ def thirdLargest(arr, arr_size):
         elif (arr[i] > third):
             third = arr[i]
     print("The third Largest element is",third)
+
 arr = [12, 13, 1, 10, 34, 16]
 n = len(arr)
 thirdLargest(arr, n)
