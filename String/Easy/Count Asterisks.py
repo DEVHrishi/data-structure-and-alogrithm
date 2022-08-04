@@ -13,12 +13,16 @@ The characters between the first and second '|' are excluded from the answer.
 Also, the characters between the third and fourth '|' are excluded from the answer.
 There are 2 asterisks considered. Therefore, we return 2.'''
 
-def countAsterisks(s):
-    count = 0
-    for i in range(0, len(s), 2):
-        if s[i] == '|':
-            count += 1
-    return count
+
+def countAsterisks(self, s: str) -> int:
+    lst = []
+    for i in s:
+        if '|' not in lst:
+            lst.append(i)
+        elif '|' in lst and i == '|':
+            lst.pop()
+    return lst.count('*')
+
 
 s = "yo|uar|e**|b|e***au|tifu|l"
 print(countAsterisks(s))
