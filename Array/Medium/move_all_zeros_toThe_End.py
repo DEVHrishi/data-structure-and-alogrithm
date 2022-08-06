@@ -31,7 +31,6 @@ def moveAllzero(arr, n):
     while count >= 0:
         arr[count] = 0
         count -= 1
-
     return arr
 
 
