@@ -18,6 +18,7 @@ print(stack)
 # element from stack in
 # LIFO order
 print('\nElements popped from stack:')
+
 print(stack.pop())
 print(stack.pop())
 print(stack.pop())
