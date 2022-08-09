@@ -5,6 +5,7 @@ def printFun(test):
         print(test, end=" ")
         printFun(test-1)  # Recursive call
         print(test, end=" ")
+        
         return
 
 # Driver Code
