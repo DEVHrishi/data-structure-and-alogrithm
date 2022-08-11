@@ -18,7 +18,6 @@ print(moveAllzero(arr, n))
 # Space Complexity: O(1)
 
 # move all zero at the beginning of the array
-
 def moveAllzero(arr, n):
     count = n-1
     i = n-1
