@@ -9,9 +9,10 @@ def subtractProductAndSum(self, n: int) -> int:
             x = x * i
             y = y + i
         return x-y
-
+        
+'''
 import numpy
 class Solution(object):
     def subtractProductAndSum(self, n):
         new = map(int, str(n))
-        return  numpy.prod(new) - sum(new)
+        return  numpy.prod(new) - sum(new)'''
