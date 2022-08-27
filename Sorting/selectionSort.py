@@ -17,6 +17,7 @@ for i in range(len(A)):
 	# the first element		
 	A[i], A[min_idx] = A[min_idx], A[i]
 
+	
 # Driver code to test above
 print ("Sorted array")
 for i in range(len(A)):
