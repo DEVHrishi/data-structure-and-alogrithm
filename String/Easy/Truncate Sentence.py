@@ -15,3 +15,12 @@ Hence, you should return "Hello how are you".'''
 # TC = O(N)
 def truncateSentence(self, s: str, k: int) -> str:
     return ' '.join(s.split(' ')[:k])
+    
+
+def truncateSentence(self, s: str, k: int) -> str:
+        for i, c in enumerate(s):
+            if c == ' ':
+                k -= 1
+            if k == 0:
+                return s[:i]
+        return s

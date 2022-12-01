@@ -24,3 +24,41 @@ def sortSentence(self, s: str) -> str:
         sent[int(words[i][-1]) - 1] = words[i][:-1]
 
     return " ".join(sent)
+
+
+def sortSentence(self, s: str) -> str:
+
+    dic = {}
+    for i in s.split():
+        dic[i[-1]] = i[:-1]
+
+    final = []
+    for num, word in sorted(dic.items()):
+        final.append(word)
+    return " ".join(final)
+
+# (runtime / memory)
+#  24 ms / 14.3 MB
+
+
+def sortSentence(self, s: str) -> str:
+
+    dic = {}
+    for i in s.split():
+        dic[i[-1]] = i[:-1]
+
+    final = [word for num, word in sorted(dic.items())]
+    return " ".join(final)
+
+# (runtime / memory)
+#  28 ms / 14.4 MB
+
+
+def sortSentence(self, s: str) -> str:
+
+    words = s[::-1].split()
+    result = [word[1:][::-1] for word in sorted(words)]
+    return ' '.join(result)
+
+# (runtime / memory)
+#  32 ms / 14.1 MB
