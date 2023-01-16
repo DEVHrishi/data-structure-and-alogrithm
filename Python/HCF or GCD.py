@@ -11,6 +11,13 @@ def compute_GCD(x, y):
 
 print(compute_GCD(54, 24))
 
+def GCD(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+print(GCD(54, 24))
+
 
 
 
