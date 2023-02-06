@@ -1,3 +1,4 @@
+
 upper_bound = int(input('Enter a number: '))
 lower_bound = int(input('Enter a number: '))
 
@@ -17,4 +18,3 @@ for i in range(lower_bound, upper_bound+1):
 
 print(num)
 
-    

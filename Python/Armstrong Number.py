@@ -1,3 +1,5 @@
+# 153 = 1*1*1 + 5*5*5 + 3*3*3  // 153 is an Armstrong number.
+
 num = int(input('Enter a number: '))
 order = len(str(num))
 x = 0
