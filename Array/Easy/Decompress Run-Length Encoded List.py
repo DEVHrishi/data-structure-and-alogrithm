@@ -14,7 +14,8 @@ At the end the concatenation [2] + [4,4,4] is [2,4,4,4].
 Example 2:
 
 Input: nums = [1,1,2,3]
-Output: [1,3,3]'''
+Output: [1,3,3]
+'''
 
 def decompressRLElist(nums):
         a=[]
