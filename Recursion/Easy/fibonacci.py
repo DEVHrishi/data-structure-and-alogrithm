@@ -16,6 +16,7 @@ def fib(n):
         return (fib(n - 1) + fib(n - 2))
 
 # Initialize variable n.
+
 n = 5
 print("Fibonacci series of 5 numbers is :", end=" ")
 
