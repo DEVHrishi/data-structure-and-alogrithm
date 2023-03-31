@@ -28,3 +28,24 @@ class Solution:
             if n > 0:
                 res += [c] * n
         return res
+
+class Solution:
+    def commonChars(self, A: List[str]) -> List[str]:
+        count = {}
+        for x in A[0]:
+            count[x] = count.get(x, 0) + 1
+            
+        
+        for x in count:
+            for i in range(1,len(A)):
+                if x in A[i]:
+                    count[x] = min(count[x], A[i].count(x))
+                    
+                else:
+                    count[x] = 0
+                    break
+        
+        ans = []
+        for k,v in count.items():
+            ans += v * [k]
+        return ans
