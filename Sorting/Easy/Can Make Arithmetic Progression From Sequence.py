@@ -15,6 +15,9 @@ Input: arr = [1,2,4]
 Output: false
 Explanation: There is no way to reorder the elements to obtain an arithmetic progression.'''
 
+from ast import List
+
+
 class Solution:
     def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
         s = sorted(arr)
