@@ -9,15 +9,34 @@ Example 1:
 Input: left = 1, right = 22
 Output: [1,2,3,4,5,6,7,8,9,11,12,15,22]'''
 
-def selfDividingNumbers(self, l: int, r: int):
-        lst = []
-        cntr = 0
-        for i in range(l, r + 1):
-            cntr = 0
-            for j in str(i):
-                if int(j) != 0:
-                    if i % int(j) == 0:
-                        cntr += 1
-                if cntr == len(str(i)):
-                    lst.append(i)
-        return lst
+from ast import List
+
+# tc = O((right - left) * log n) and sc = 
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -> List[int]:
+        l = []
+        for i in range(left, right+1):
+            k = i
+            while k > 0:
+                d = k % 10
+                if d == 0 or i % d != 0:
+                    break
+                k = k // 10
+            else:   
+                l.append(i)
+        return l
+
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -> List[int]:
+        def isSelfDividing(num):
+            for digit in str(num):
+                if digit == '0' or num % int(digit) != 0:
+                    return False
+            return True
+        
+        res = []
+        for num in range(left, right+1):
+            if isSelfDividing(num):
+                res.append(num)
+        
+        return res
