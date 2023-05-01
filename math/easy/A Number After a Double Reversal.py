@@ -8,7 +8,7 @@ Example 1:
 Input: num = 526
 Output: true
 Explanation: Reverse num to get 625, then reverse 625 to get 526, which equals num.'''
-
+# tc = O(n) and sc = (n)
 def isSameAfterReversals(self, num: int) -> bool:
         reverse = 0
         reverse2 = 0
@@ -26,7 +26,13 @@ def isSameAfterReversals(self, num: int) -> bool:
             return True
         return False
 
-
+# tc = O(n) and sc = (n)
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        s = str(num)[::-1]
+        d = int(s)
+        k = str(d)[::-1]
+        return num == int(k)
 
 def isSameAfterReversals(self, num: int) -> bool:
         return (num == 0) or (num % 10 != 0)
