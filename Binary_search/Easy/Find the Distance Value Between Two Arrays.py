@@ -51,7 +51,7 @@ class Solution:
 
         return distance_value
 
-# tc = O(m * log n) and sc = O(1)
+#  tc = O(m * log n) and sc = O(1)
 class Solution:
     def findTheDistanceValue(self, arr1: List[int], arr2: List[int], d: int) -> int:
         arr2.sort()
