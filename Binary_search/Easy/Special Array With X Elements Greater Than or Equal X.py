@@ -28,7 +28,7 @@ Explanation: There are 3 values that are greater than or equal to 3.'''
 
 from ast import List
 
-
+# tc = (log n) and sc = O(1)
 class Solution:
 	def specialArray(self, nums: List[int]) -> int:
 
@@ -59,7 +59,7 @@ class Solution:
 		return -1
 	
 
-    
+# tc = O(n^2) and sc = O(1)
 class Solution:
 	def specialArray(self, nums: List[int]) -> int:
 
