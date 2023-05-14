@@ -13,6 +13,34 @@ Output: [4,9]
 Explanation: [9,4] is also accepted.'''
 
 from ast import List
+from collections import Counter
+
+# binary search
+# tc = O(n log n + len(nums1) * log len(nums2)) and sc = O(min(len(nums1), len(nums2)))
+def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        result = []
+        for val in nums1:
+            res,pos = self.search(val,nums2)
+            if res == True:
+                del nums2[pos]
+                result.append(val)
+        return result
+    
+def search(self,val,a):
+    a.sort()
+    l = 0
+    h = len(a)-1 
+    while l <= h:
+        mid = (l + h) // 2
+        if a[mid] == val:
+            return True,mid
+        elif a[mid] < val:
+            l = mid + 1
+        else:
+            h = mid - 1
+    return False,-1
+
+
 # two pointer approach
 # tc = O(nlogn) and sc = O(min(len(nums1), len(nums2)))
 class Solution:
@@ -32,6 +60,7 @@ class Solution:
                 j += 1
         return result
     
+# tc = O(M + N) and sc = O(min(M, N))
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         if len(nums1) > len(nums2): return self.intersect(nums2, nums1)
