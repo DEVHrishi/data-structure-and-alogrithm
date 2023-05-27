@@ -36,7 +36,8 @@ class Solution:
             if t == 1:
                 c += 1
         return c
-            
+
+# tc = O(a + n * m) and sc = O(1)       
 class Solution:
     def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
         notSol = 0
