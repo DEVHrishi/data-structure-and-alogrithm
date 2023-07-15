@@ -17,6 +17,7 @@ def isPowerOfTwo(self, n: int) -> bool:
     elif n%2==0:
         return self.isPowerOfTwo(n//2)
     
+    
 
 # iterative approach
 def isPowerOfTwo(self, n: int) -> bool:
