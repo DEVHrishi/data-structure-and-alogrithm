@@ -13,7 +13,7 @@ Input: head = [1,2]
 Output: false'''
 
 '''approach:
-1. using set
+1. using stack
 2. 2 pointer fast and slow where reverse the second half of the list then check
 '''
 # tc: O(n) and sc: O(n)
