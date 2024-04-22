@@ -16,6 +16,7 @@ Output: 2
 '''approach:
 1. recursion
 2. BFS
+3. DFS
 '''
 # tc = o(n) and sc = o(n)
 class Solution:
@@ -46,3 +47,23 @@ class Solution:
                     queue.append(node.right)
             result.append(current_level)
         return len(result)
+    
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        # check if root is None or not
+        if not root:
+            return 0
+        # define stack
+        node_stack = [(root, 1)]
+        max_depth = 0
+
+        # traverse the tree until stack is not empty
+        while node_stack:
+            node, depth = node_stack.pop()
+            max_depth = max(max_depth, depth)
+            if node.right:
+                node_stack.append((node.right, depth + 1))
+            if node.left:
+                node_stack.append((node.left, depth + 1))
+
+        return max_depth
