@@ -21,22 +21,20 @@ Explanation: The smallest value is 2, but there isn't any second smallest value.
 class Solution:
     def __init__(self):
         self.min_value = float('inf')
-        self.second_min_value = float('inf')
-
+        self.sec_min_value = float('inf')
     def dfs(self, node):
         if not node:
-            return
-        
-        # Update min_value and second_min_value based on the current node value
-        if node.val < self.min_value:
-            self.second_min_value = self.min_value
-            self.min_value = node.val
-        elif node.val < self.second_min_value and node.val != self.min_value:
-            self.second_min_value = node.val
-
-        # Recursive DFS traversal
+            return 
+        if self.min_value < node.val < self.sec_min_value  :
+            self.sec_min_value = node.val
+        self.min_value = min(self.min_value, node.val)
         self.dfs(node.left)
         self.dfs(node.right)
+    def findSecondMinimumValue(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return -1
+        self.dfs(root)
+        return self.sec_min_value if self.sec_min_value != float('inf') else -1
 
     def findSecondMinimumValue(self, root: Optional[TreeNode]) -> int:
         if not root:

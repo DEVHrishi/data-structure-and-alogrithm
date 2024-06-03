@@ -20,7 +20,6 @@ class Solution:
         if not root:
             return []
         stack = [root]
-        result = []
         while stack:
             node = stack.pop()
             if node.val == val:
@@ -32,12 +31,9 @@ class Solution:
         return 
     
 class Solution:
-    def search (self, node, val):
-        if not node:
-            return 
-        if node.val == val:
-            return node
-        return self.search(node.left, val) or self.search(node.right, val)
-        
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        return self.search(root, val)
+        if not root:
+            return
+        if root.val == val:
+            return root
+        return self.searchBST(root.left, val) or self.searchBST(root.right, val)

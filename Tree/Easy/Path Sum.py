@@ -25,6 +25,7 @@ Input: root = [], targetSum = 0
 Output: false
 Explanation: Since the tree is empty, there are no root-to-leaf paths.'''
 
+# tc: O(n) and sc: o(h)
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         if not root:
@@ -33,6 +34,7 @@ class Solution:
             return targetSum == root.val
         return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
 
+# tc: O(n) and sc: o(n)
 from collections import deque
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:

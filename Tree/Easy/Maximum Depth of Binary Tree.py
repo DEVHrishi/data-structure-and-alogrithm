@@ -20,6 +20,19 @@ Output: 2
 '''
 # tc = o(n) and sc = o(n)
 class Solution:
+    def __init__(self):
+        self.max_depth = 0
+    def dfs(self, node, depth):
+        if not node:
+            return
+        self.max_depth = max(self.max_depth, depth)
+        self.dfs(node.left, depth+1)
+        self.dfs(node.right, depth+1)
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        self.dfs(root, 1)
+        return self.max_depth
+    
+class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
@@ -29,24 +42,23 @@ class Solution:
         return 1+max(left_depth, right_depth)
     
 class Solution:
+    from collections import deque
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
         queue = deque([root])
-        result = []
-
+        result = 0
         while queue:
             level_size = len(queue)
-            current_level = []
-            for _ in range(level_size):
+            result += 1
+            
+            for i in range(level_size):
                 node = queue.popleft()
-                current_level.append(node.val)
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            result.append(current_level)
-        return len(result)
+        return result
     
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:

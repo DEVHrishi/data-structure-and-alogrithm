@@ -39,3 +39,13 @@ class Solution:
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
+    
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return root
+        left_node = self.invertTree(root.left)
+        right_node = self.invertTree(root.right)
+        root.right = left_node
+        root.left = right_node
+        return root
