@@ -1,26 +1,12 @@
-def isPalindrome(s):
-    left = 0
-    right = len(s)-1
-    while left < right:
-        if not s[left].isalnum():
-            left += 1
-        elif not s[right].isalnum():
-            right -= 1
-        elif s[left].lower() != s[right].lower():
-            return False
-        else:
-            left += 1
-            right -= 1
-    return True
-
-
-
-if __name__ == "__main__":
-    str = "ABCDCBA"
-    ans = isPalindrome(str)
-
-
-    if ans == True:
-        print("Palindrome")
+def palindrome(s, n, i):
+    if s[i] != s[-i-1]:
+        return False
+    elif i == n//2:
+        return True
     else:
-        print("Not Palindrome")
+        return palindrome(s, n, i+1)
+
+s = 'aaaaaaa'
+n = len(s)
+i=0
+print(palindrome(s,n,i))
