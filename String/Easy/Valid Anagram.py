@@ -19,21 +19,35 @@ def isAnagram(self, s: str, t: str) -> bool:
     return sorted(s) == sorted(t)
 
 # TC = O(n)
+from collections import Counter
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        a = {}
-        b = {}
-        for i in s:
-            if i in a:
-                a[i]+=1
-            else:
-                a[i]=1
+        # naa and ana
+        # an and ana
+
+        # method 1
+        # tc: O(n)+O(n)
+        # calculate frequecy
+        freq_of_char = Counter(s)
+
         for i in t:
-            if i in b:
-                b[i]+=1
+            if i in freq_of_char:
+                freq_of_char[i] -= 1
             else:
-                b[i]=1
-        if a == b:
-            return True
-        else:
+                return False
+        for key, value in freq_of_char.items():
+            if value != 0:
+                return False
+        return True
+
+        # method 2
+        # tc: O(n log n) + O(n log n) + O(n) 
+        if len(s) != len(t):
             return False
+        sorted_s = sorted(s)
+        sorted_t = sorted(t)
+
+        for i in range(len(s)):
+            if sorted_s[i] != sorted_t[i]:
+                return False
+        return True
